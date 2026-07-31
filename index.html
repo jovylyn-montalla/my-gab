@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reasons I Love You</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+
+            background:
+                radial-gradient(circle at top, #542b62, transparent 45%),
+                linear-gradient(135deg, #160b24, #321335);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+            padding: 45px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 28px;
+
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(12px);
+        }
+
+        .heart {
+            margin-bottom: 14px;
+            font-size: 55px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(32px, 7vw, 52px);
+        }
+
+        p {
+            min-height: 90px;
+            margin: 0 auto 28px;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 999px;
+
+            font-size: 17px;
+            font-weight: bold;
+            color: #4a1739;
+            background: #ffd8eb;
+
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 216, 235, 0.25);
+        }
+
+        .counter {
+            margin-top: 24px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <div class="heart">❤️</div>
+
+        <h1 id="title">Hi, love</h1>
+
+        <p id="message">
+            I made this little corner of the internet just for you.
+        </p>
+
+        <button id="nextButton" onclick="showNextReason()">
+            See Why I Love You
+        </button>
+
+        <div class="counter" id="counter"></div>
+    </main>
+
+    <script>
+        const reasons = [
+            {
+                title: "Reason #1",
+                message:
+                    "I love that you never forget to check how I'm doing. " +
+                    "Even from far away, you always make me feel cared for."
+            },
+            {
+                title: "Reason #2",
+                message:
+                    "I love how sweet you are. You make even ordinary moments " +
+                    "feel special just by being yourself."
+            },
+            {
+                title: "Reason #3",
+                message:
+                    "I love your compliments. You always know how to make me " +
+                    "smile and feel beautiful."
+            },
+            {
+                title: "One last thing...",
+                message:
+                    "These are only a few of the reasons I love you. " +
+                    "Every day, you give me another reason to choose you. ❤️"
+            }
+        ];
+
+        let currentReason = -1;
+
+        function showNextReason() {
+            currentReason++;
+
+            const title = document.getElementById("title");
+            const message = document.getElementById("message");
+            const button = document.getElementById("nextButton");
+            const counter = document.getElementById("counter");
+
+            title.textContent = reasons[currentReason].title;
+            message.textContent = reasons[currentReason].message;
+
+            if (currentReason < reasons.length - 1) {
+                button.textContent = "Next Reason ❤️";
+                counter.textContent =
+                    `${currentReason + 1} of ${reasons.length - 1}`;
+            } else {
+                button.style.display = "none";
+                counter.textContent = "Made with love, just for you.";
+            }
+        }
+    </script>
+</body>
+</html>
