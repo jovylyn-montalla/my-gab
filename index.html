@@ -100,14 +100,14 @@
     <main class="card">
         <div class="heart">❤️</div>
 
-        <h1 id="title">Hi, love</h1>
+        <h1 id="title">hey gab</h1>
 
         <p id="message">
-            I made this little corner of the internet just for you.
+            made this so you have a little space of the internet just for you
         </p>
 
         <button id="nextButton" onclick="showNextReason()">
-            See Why I Love You
+            reasons why i love u 
         </button>
 
         <div class="counter" id="counter"></div>
@@ -116,28 +116,28 @@
     <script>
         const reasons = [
             {
-                title: "Reason #1",
+                title: "#1",
                 message:
-                    "I love that you never forget to check how I'm doing. " +
-                    "Even from far away, you always make me feel cared for."
+                    "u weird " +
+                    "and i love it"
             },
             {
-                title: "Reason #2",
+                title: "#2",
                 message:
-                    "I love how sweet you are. You make even ordinary moments " +
-                    "feel special just by being yourself."
+                    "super sweet" +
+                    "in every aspect ;> "
             },
             {
-                title: "Reason #3",
+                title: "#3",
                 message:
-                    "I love your compliments. You always know how to make me " +
-                    "smile and feel beautiful."
+                    "love ur antics " +
+                    "always makes me smile"
             },
             {
-                title: "One last thing...",
+                title: "hope u have a nice day at work",
                 message:
-                    "These are only a few of the reasons I love you. " +
-                    "Every day, you give me another reason to choose you. ❤️"
+                    "we can always watch movies or play games" +
+                    "doesn't matter which one u like as long as we do it together ❤️"
             }
         ];
 
@@ -155,7 +155,7 @@
             message.textContent = reasons[currentReason].message;
 
             if (currentReason < reasons.length - 1) {
-                button.textContent = "Next Reason ❤️";
+                button.textContent = "❤️";
                 counter.textContent =
                     `${currentReason + 1} of ${reasons.length - 1}`;
             } else {
